@@ -1,0 +1,33 @@
+﻿<html>
+    <head>
+        <title>Дом</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <h1 align="center">PhoneBook</h1>
+            </tr>
+            <tr>
+                <td align="left">
+                    <img src="~/tFdhQWaRa2c.jpg" class="img" height="1000" width="650" />
+                </td>
+                <td align="center">
+                    <table border="1">
+                        @for (int i = 0; i < 35; i++)
+                            {
+                                <tr>
+                                    <td><a href="Home/Details?id=@i">@Model.contacts[i].Id</a></td>
+                                    <td>@Model.contacts[i].LastName</td>
+                                    <td>@Model.contacts[i].FirstName</td>
+                                    <td>@Model.contacts[i].PName</td>
+                                </tr>
+                            }
+                    </table>
+                </td>
+                <td align="right">
+                    <img src="~/XfJjHjwRWaM.jpg" class="img" height="1000" width="650"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
