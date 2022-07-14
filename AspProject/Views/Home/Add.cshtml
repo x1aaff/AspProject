@@ -1,0 +1,32 @@
+﻿<html>
+    <head>
+        <title>Новый контакт</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td align="left" width="50%">
+                    <img src="~/Synthetic_dawn_portrait_molluscoid.png" class="img" height="100%" width="100%"/>
+                </td>
+                <td align="left" width="50%">
+                    <form action="~/Home/AddDataFromViewField" method="post">
+                        <label>Фамилия</label><br />
+                        <input type="text" name="lName" /><br />
+                        <label>Имя</label><br />
+                        <input type="text" name="fName" /><br />
+                        <label>Отчество</label><br />
+                        <input type="text" name="pName" /><br />
+                        <label>Телефон</label><br />
+                        <input type="number" name="pNumber" /><br />
+                        <label>Адрес</label><br />
+                        <input type="text" name="address" /><br />
+                        <label>Описание</label><br />
+                        <input type="text" name="description" /><br />
+
+                        <p><input type="submit" value="Записать" /></p>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

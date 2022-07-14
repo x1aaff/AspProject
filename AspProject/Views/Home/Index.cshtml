@@ -8,24 +8,27 @@
                 <h1 align="center">PhoneBook</h1>
             </tr>
             <tr>
-                <td align="left">
-                    <img src="~/tFdhQWaRa2c.jpg" class="img" height="1000" width="650" />
+                <a href="Home/Add"><h3 align="center">Добавить контакт</a></h3>
+            </tr>
+            <tr>
+                <td align="left" width="33%">
+                    <img src="~/tFdhQWaRa2c.jpg" class="img" height="100%" width="100%"/>
                 </td>
-                <td align="center">
+                <td align="center" width="33%">
                     <table border="1">
-                        @for (int i = 0; i < 35; i++)
+                        @for (int i = 0; i < Model.Count; i++)
                             {
                                 <tr>
-                                    <td><a href="Home/Details?id=@i">@Model.contacts[i].Id</a></td>
-                                    <td>@Model.contacts[i].LastName</td>
-                                    <td>@Model.contacts[i].FirstName</td>
-                                    <td>@Model.contacts[i].PName</td>
+                                    <td><a href="Home/Details?id=@i">@Model[i].Id</a></td>
+                                    <td>@Model[i].LastName</td>
+                                    <td>@Model[i].FirstName</td>
+                                    <td>@Model[i].PName</td>
                                 </tr>
                             }
                     </table>
                 </td>
-                <td align="right">
-                    <img src="~/XfJjHjwRWaM.jpg" class="img" height="1000" width="650"/>
+                <td align="right" width="33%">
+                    <img src="~/XfJjHjwRWaM.jpg" class="img" height="100%" width="100%"/>
                 </td>
             </tr>
         </table>

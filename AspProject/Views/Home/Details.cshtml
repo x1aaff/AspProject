@@ -1,4 +1,6 @@
-﻿<html>
+﻿@using System.Text.Json;
+
+<html>
     <head>
         <title>Контакт</title>
     </head>
@@ -8,20 +10,33 @@
                 <h1 align="center">Контакт</h1>
             </tr>
             <tr>
-                <td align="left">
-                    <img src="~/index13.jpg" class="img" height="1000" width="650" />
+                <td align="left" width="33%">
+                    <img src="~/index13.jpg" class="img" height="100%" width="100%"/>
                 </td>
-                <td align="center">
+                <td align="center" width="33%">
                     <h1>@Model.Id</h1>
-                    <h1>@Model.LastName</h1>
-                    <h1>@Model.FirstName</h1>
-                    <h1>@Model.PName</h1>
-                    <h1>@Model.PhoneNumber</h1>
-                    <h1>@Model.Adress</h1>
-                    <h1>@Model.Description</h1>
+                    <form action="~/Home/EditDataFromViewField">
+                        <label>Id</label><br />
+                        <input type="number" name="id" value="@Model.Id" readonly/><br />
+                        <label>Фамилия</label><br />
+                        <input type="text" name="lName" value="@Model.LastName"/><br />
+                        <label>Имя</label><br />
+                        <input type="text" name="fName" value="@Model.FirstName"/><br />
+                        <label>Отчество</label><br />
+                        <input type="text" name="pName" value="@Model.PName"/><br />
+                        <label>Телефон</label><br />
+                        <input type="number" name="pNumber" value="@Model.PhoneNumber"/><br />
+                        <label>Адрес</label><br />
+                        <input type="text" name="address" value="@Model.Adress"/><br />
+                        <label>Описание</label><br />
+                        <input type="text" name="description" value="@Model.Description"/><br />
+
+                        <p><input type="submit" value="Изменить" /></p>
+                    </form>
+                    <a href="~/Home/DeleteDataFromViewField?id=@Model.Id">Удалить</a>
                 </td>
-                <td align="right">
-                    <img src="~/inde2.jpg" class="img" height="1000" width="650"/>
+                <td align="right" width="33%">
+                    <img src="~/inde2.jpg" class="img" height="100%" width="100%"/>
                 </td>
             </tr>
         </table>

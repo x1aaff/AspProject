@@ -1,4 +1,4 @@
-﻿namespace AspProject.Model
+﻿namespace AspProject.Entities
 {
     public class Contact
     {

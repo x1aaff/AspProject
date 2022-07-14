@@ -1,34 +1,27 @@
-﻿using System.Text.Json;
+﻿using AspProject.Entities;
+using System.Text.Json;
+using AspProject.ContextFolder;
 
 namespace AspProject.Model
 {
     public class PhoneBook
     {
-        public List<Contact> contacts;
+        public static DataContext context;
         public PhoneBook()
         {
-            contacts = ReadContacts("contacts.json");
+            context = new DataContext();
         }
 
-        public Contact GetContact(int id)
+        public static void GenContacts()
         {
-            Contact contact = contacts[id];
-            return contact;
-        }
-
-        public static List<Contact> GenContacts()
-        {
-            List<Contact> contacts = new List<Contact>();
-
             List<string> names = new List<string>() 
                 {"Лофяон", "Працтал", "Фрактал", "Латкарф", "Латцарп", "Стал", "Добрый", "Норильск", "Сат", "Бэнкси", "Найк" };
 
             Random r = new();
             for (int i = 0; i < 35; i++)
             {
-                contacts.Add(new Contact()
+                context.Contacts.Add(new Contact()
                 {
-                    Id = i,
                     LastName = names[r.Next(11)],
                     FirstName = names[r.Next(11)],
                     PName = names[r.Next(11)],
@@ -36,9 +29,8 @@ namespace AspProject.Model
                     Adress = names[r.Next(11)] + ", " + r.Next(100),
                     Description = i.GetHashCode().ToString()
                 });
+                context.SaveChanges();
             }
-
-            return contacts;
         }
 
         public static void SaveContacts(List<Contact> contacts)
